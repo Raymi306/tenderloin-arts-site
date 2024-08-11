@@ -1,0 +1,135 @@
+body {
+    background-color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0;
+    margin-bottom: 2%;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #444342;
+    color: white;
+    padding: 0.6rem;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 13px;
+}
+
+#tenderloin-logo-img {
+    width: 100%;
+}
+
+.nav-bar ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-bar li {
+    font-weight: bold;
+    list-style: none;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.nav-bar li > a {
+    display: block;
+}
+
+.nav-bar li + li {
+    margin-top: 1rem;
+}
+
+.nav-bar a:link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.nav-bar a:visited {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.nav-social-media {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.nav-social-media > a {
+    display: flex;
+    padding: 0.3rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery > a {
+    max-width: 600px;
+    max-height: 380px;
+    margin: 2px;
+}
+
+.gallery img {
+    max-width: 100%;
+}
+
+.content {
+    text-align: center;
+}
+
+img.full {
+    max-width: 100%;
+    max-height: 1280px;
+}
+
+@media only screen and (min-width: 601px) {
+    .nav-bar {
+        justify-content: center;
+        align-items: center;
+    }
+    #tenderloin-logo-img {
+        height: 100px;
+	width: auto;
+	margin-right: 1.3rem;
+    }
+    .nav-bar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+        width: fit-content;
+    }
+    .nav-bar li {
+        margin-right: 1rem;
+    }
+    .nav-bar li + li {
+        margin-top: 0rem;
+    }
+    .nav-social-media {
+        margin: 0;
+    }
+}

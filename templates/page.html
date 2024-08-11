@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div class="content">
+  {% for asset in page.assets | sort -%}
+    {%- if asset is matching("[.](jpg|png)$") -%}
+      {% set image = resize_image(path=asset, width=600, height=380) %}
+      {% set asset_extract = asset | split(pat='/') | last %}
+      {% set asset_link = page.permalink ~ asset_extract %}
+      <img class="full" src="{{ asset_link | safe }}"/>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{{ page.content | safe }}
+</div>
+{% endblock content %}

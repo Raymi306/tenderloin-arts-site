@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if section %}
+  {% set context = section %}
+{% else %}
+  {% set context = page %}
+{% endif %}
+{{ context.title }}
+{% endblock %}
+
+{% block content %}
+{% if section %}
+  {% set context = section %}
+{% else %}
+  {% set context = page %}
+{% endif %}
+<div class="gallery">
+  {% set gallery = get_section(path="gallery/_index.md") %}
+  {% for page in gallery.pages -%}
+    {%- if page.taxonomies and context.extra.tag_to_display in page.taxonomies.tags -%}
+    {% for asset in page.assets | sort -%}
+      {%- if asset is matching("[.](jpg|png)$") -%}
+        {% set image = resize_image(path=asset, width=600, height=380) %}
+        <a href="{{ page.path }}">
+          <img src="{{ image.url }}" />
+        </a>
+        {% break %}
+      {%- endif %}
+    {%- endfor %}
+    {%- endif %}
+  {%- endfor %}
+</div>
+{% endblock content %}
